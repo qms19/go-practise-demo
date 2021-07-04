@@ -23,7 +23,7 @@ type User struct {
 }
 
 type AuthMiddleware struct {
-	basic       gin.HandlerFunc
+	//basic       gin.HandlerFunc
 	JWT         *jwt.GinJWTMiddleware
 }
 
