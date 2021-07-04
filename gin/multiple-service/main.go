@@ -39,10 +39,10 @@ func main()  {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		if err := srv.Shutdown(ctx) ; err != nil {
-			log.Fatal("Shutdown server failed: %s\n", err)
+			log.Fatalf("Shutdown server failed: %s\n", err)
 		}
 		if err := srv2.Shutdown(ctx) ; err != nil {
-			log.Fatal("Shutdown server failed: %s\n", err)
+			log.Fatalf("Shutdown server failed: %s\n", err)
 		}
 		log.Println("Shutdown server ")
 	}()
