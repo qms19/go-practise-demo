@@ -33,8 +33,8 @@ func main()  {
 	wg.Add(3)
 	go func() {
 		defer  wg.Done()
-		quit := make(chan os.Signal)
-		signal.Notify(quit, os.Interrupt,os.Kill,syscall.SIGTERM)
+		quit := make(chan os.Signal, 2)
+		signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
 		<- quit
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
