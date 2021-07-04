@@ -1,0 +1,5 @@
+app: 测试app
+#author: app-qms
+redis:
+  host: 127.0.0.1
+  port: 6379
